@@ -1,0 +1,15 @@
+Welcome to the Portfolio Index / Root page
+
+Who is our current user?
+
+<%= current_user.first_name %>
+
+<ul>
+  <% @portfolios.each do |portfolio| %>
+    <li><%= portfolio.fund_name %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Create New Portfolio', new_portfolio_path %>
+
+<%= link_to 'Logout', destroy_user_session_path, :method => :delete %>

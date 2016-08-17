@@ -1,1 +1,7 @@
-hello new
+<%= form_for @portfolio do |f| %>
+  <%= f.label :fund_name %>
+  <%= f.text_field :fund_name %>
+  <%= f.label :cash %>
+  <%= f.text_field :cash %>
+  <%= f.submit %>
+<% end %>

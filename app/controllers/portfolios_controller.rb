@@ -17,6 +17,10 @@ class PortfoliosController < ApplicationController
     redirect_to portfolios_url
   end
 
+  def show
+    @positions = Position.where(portfolio_id: params[:id])
+  end
+
   private
 
   def portfolio_params

@@ -4,5 +4,7 @@ Rails.application.routes.draw do
 
   root to: 'portfolios#index'
 
-  resources :portfolios
+  resources :portfolios do
+    resources :position
+  end
 end

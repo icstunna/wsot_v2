@@ -6,7 +6,7 @@ Who is our current user?
 
 <ul>
   <% @portfolios.each do |portfolio| %>
-    <li><%= portfolio.fund_name %></li>
+    <li><%= link_to portfolio.fund_name, portfolio_url(portfolio.id)  %></li>
   <% end %>
 </ul>
 

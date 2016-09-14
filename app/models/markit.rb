@@ -5,11 +5,18 @@ class Markit
   include HTTParty
   base_uri 'http://dev.markitondemand.com/Api/v2'
 
-  def initialize(ticker)
-    @option = { query: {symbol: ticker }}
-  end
+  # def initialize
+  # end
 
-  def quote
+  def quote(ticker)
+    @option = { query: {symbol: ticker }}
     self.class.get("/quote", @option)
   end
+
+  def lookup(company)
+    @lookup = { query: {input: company }}
+    self.class.get("/lookup", @lookup)
+  end
 end
+
+

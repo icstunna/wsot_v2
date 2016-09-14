@@ -19,7 +19,6 @@ $(document).ready(function() {
           $(".lookup_results").append("<div>" + lookupResults[i]["Name"] + lookupResults["Symbol"] + "</div>")
         }
       } else {
-          debugger
         $(".lookup_results").append("<div>" + lookupResults["Name"] + lookupResults["Symbol"] + "</div>")
       }
     });

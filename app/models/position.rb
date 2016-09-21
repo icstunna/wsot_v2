@@ -12,5 +12,9 @@ class Position < ApplicationRecord
   def balance
     self.stock.current_price * self.quantity
   end
+  
+  def close
+    self.stock.close_price * self.quantity
+  end
 
 end

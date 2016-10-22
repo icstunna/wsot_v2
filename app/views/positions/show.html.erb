@@ -1,0 +1,16 @@
+Company Show Page
+
+Company Name
+Ticker 
+Quantity
+Profit / Loss
+
+<% @position.journals.each do |journal| %>
+  <ol>
+    <li><%= link_to(journal.title, portfolio_position_journal_url(portfolio_id: @position.portfolio_id, position_id: @position.id, id: journal.id))%></li>
+  </ol>
+<% end %>
+
+<%= link_to('New Journal', new_portfolio_position_journal_url(portfolio_id: @position.portfolio_id, position_id: @position.id)) %>
+
+<%= link_to('Back', portfolio_url(id: @position.portfolio_id)) %>

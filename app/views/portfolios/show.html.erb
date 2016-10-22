@@ -8,14 +8,17 @@
     <th>Balance</th>
   </tr>
 <% @positions.each do |position| %>
-  <tr>
-    <th><%= position.stock.company_name%></th>
-    <th><%= position.stock.ticker%></th>
-    <th><%= position.stock.current_price%></th>
-    <th><%= position.open_price%></th>
-    <th><%= position.profit_loss%></th>
-    <th><%= position.balance%></th>
-  </tr>
+  <% if !position.close_price %>
+    <tr>
+      <th><%= position.stock.company_name%></th>
+      <th><%= position.stock.ticker%></th>
+      <th><%= position.stock.current_price%></th>
+      <th><%= position.open_price%></th>
+      <th><%= position.profit_loss%></th>
+      <th><%= position.balance%></th>
+      <th><%= button_to 'Sell!', portfolio_position_path(portfolio_id: position.portfolio_id, id: position.id), :method => :delete %></th>
+    </tr>
+  <% end %>
 <% end %>
 </table>
 

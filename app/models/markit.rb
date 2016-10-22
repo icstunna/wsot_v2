@@ -19,4 +19,5 @@ class Markit
   end
 end
 
-
+quote = Markit.new.quote('aapl')
+pp quote

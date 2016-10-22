@@ -1,6 +1,7 @@
 class Position < ApplicationRecord
   belongs_to :portfolio
   belongs_to :stock
+  has_many :journals
 
   def profit_loss
     open_balance = self.quantity * self.open_price

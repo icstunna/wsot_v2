@@ -2,7 +2,7 @@ Welcome to the Portfolio Index / Root page
 
 Who is our current user?
 
-<%= current_user.first_name %>
+<%= current_user.first_name %>  <%= link_to "edit", edit_user_registration_path(current_user) %>
 
 <ul>
   <% @portfolios.each do |portfolio| %>

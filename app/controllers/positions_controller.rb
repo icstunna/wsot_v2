@@ -26,7 +26,8 @@ class PositionsController < ApplicationController
   
   def show
     @position = Position.find(params[:id].to_i)
-    
+    p "o" * 40
+    p params
   end
 
   def lookup

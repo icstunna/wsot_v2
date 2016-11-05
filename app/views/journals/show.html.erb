@@ -9,3 +9,5 @@ TESTING JOURNAL SHOW PAGE
   <span>Entry:</span>
   <span><%= @journal.entry %></span>
 </div>
+
+<%= link_to 'Back', portfolio_position_path(portfolio_id: @journal.position.portfolio_id, id: @journal.position_id) %>

@@ -1,4 +1,5 @@
 
+Positions Show 
 <span>
   Company Name
 </span>
@@ -13,12 +14,12 @@
 </span>
 
 
-<% @position.journals.each do |journal| %>
-  <ol>
+<ol>
+  <% @position.journals.each do |journal| %>
     <li><%= link_to(journal.title, portfolio_position_journal_url(portfolio_id: @position.portfolio_id, position_id: @position.id, id: journal.id))%></li>
-  </ol>
-<% end %>
+  <% end %>
+</ol>
 
 <%= link_to('New Journal', new_portfolio_position_journal_url(portfolio_id: @position.portfolio_id, position_id: @position.id)) %>
 
-<%= link_to('Back', portfolio_url(id: @position.portfolio_id)) %>
+<%= link_to 'Back', portfolio_path(@position.portfolio_id) %>

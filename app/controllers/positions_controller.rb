@@ -23,6 +23,11 @@ class PositionsController < ApplicationController
 
     redirect_to portfolio_path(@portfolio)
   end
+  
+  def show
+    @position = Position.find(params[:id].to_i)
+    
+  end
 
   def lookup
     @lookup = Markit.new.lookup(params[:lookup])

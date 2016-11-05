@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   root to: 'portfolios#index'
 
   resources :portfolios do
-    resources :positions
+    resources :positions do
+      resources :journals
+    end
   end
 
   match '/lookup', :to => 'positions#lookup', :via => [:post]

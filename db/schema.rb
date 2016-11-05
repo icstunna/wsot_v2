@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160824203909) do
+ActiveRecord::Schema.define(version: 20161022201635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "journals", force: :cascade do |t|
+    t.string   "title"
+    t.text     "entry"
+    t.integer  "position_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["position_id"], name: "index_journals_on_position_id", using: :btree
+  end
 
   create_table "portfolios", force: :cascade do |t|
     t.integer  "user_id"

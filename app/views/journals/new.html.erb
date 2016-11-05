@@ -7,3 +7,5 @@ New Journal
   <%= f.text_field :entry %>
   <%= f.submit %>
 <% end %>
+
+<%= link_to 'Back', portfolio_position_path(portfolio_id: @position.portfolio_id, id: @position.id) %>

@@ -2,6 +2,7 @@ $(document).ready(function() {
 
   $(".lookup").on('submit', function(event) {
     event.preventDefault();
+    $('.spinner').show();
 
     var value = $(".ticker_lookup").val()
 
@@ -13,6 +14,7 @@ $(document).ready(function() {
     });
 
     lookupRequest.success(function(data) {
+      $('.spinner').hide();
       var lookupResults = data.results['LookupResultList']['LookupResult']
       if (lookupResults.length) {
         for ( var i=0; i < lookupResults.length; i++) {

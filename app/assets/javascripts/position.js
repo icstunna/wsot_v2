@@ -1,5 +1,5 @@
-$(document).ready(function() {
-
+$(document).on('turbolinks:load', function() {
+  
   $(".lookup").on('submit', function(event) {
     event.preventDefault();
     $('.spinner').show();
@@ -25,4 +25,4 @@ $(document).ready(function() {
       }
     });
   })
-})
+});
